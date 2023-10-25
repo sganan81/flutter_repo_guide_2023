@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo_guide/widgets/card_image_widget.dart';
 
 import '../widgets/card_sample_widget.dart';
 
@@ -10,19 +11,23 @@ class CardSampleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        physics: BouncingScrollPhysics(),
         children: [
             CardSampleWidget(
               titulo: 'PRueba',               
             ),
-            Card(
-              child: FadeInImage(
-                placeholder: AssetImage('assets/images/loading.gif'), 
-                image: NetworkImage('https://www.frbb.utn.edu.ar/frbb/images/img5023.jpg'),
-                fit: BoxFit.cover,
-              ),
-            )
+            CardImageSample(url:'assets/images/landing.jpg', caption:'imagen de la facultad'),            
+            CardImageSample(url:'assets/images/landing.jpg'),            
+            CardImageSample(url:'assets/images/landing.jpg'),            
+            CardImageSample(url:'assets/images/landing.jpg'),            
+            CardImageSample(url:'assets/images/landing.jpg'),            
+            CardImageSample(url:'assets/images/landing.jpg'),            
+            CardImageSample(url:'assets/images/landing.jpg'),            
+            CardImageSample(url:'assets/images/landing.jpg'),            
+            CardImageSample(url:'assets/images/landing.jpg'),            
         ],
       ),
     );
   }
 }
+
