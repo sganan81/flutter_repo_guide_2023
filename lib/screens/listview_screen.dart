@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo_guide/widgets/drawer_menu.dart';
 
 class ListViewScreen extends StatelessWidget {
    
@@ -10,6 +11,7 @@ class ListViewScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('List View'),
       ),
+      drawer: DrawerMenu(),
       body: ListView(
         physics: BouncingScrollPhysics(),
         children: const [

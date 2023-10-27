@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo_guide/widgets/drawer_menu.dart';
 
 
 class ListBuilderScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class ListBuilderScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('ListView Builder Screen...'),
       ),      
+      drawer: DrawerMenu(),
       body: ListView.separated(
         itemBuilder: (_, index) {
           print('..........: $index');

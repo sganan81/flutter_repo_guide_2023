@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo_guide/widgets/drawer_menu.dart';
 
 class DesignPage extends StatelessWidget {
    
@@ -6,7 +7,8 @@ class DesignPage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(       
+    return Scaffold(      
+      drawer: DrawerMenu(),     
       body: ListView(           
          children: [             
               //https://www.eltiempo.com/files/article_main/uploads/2022/06/04/629bff00a3ab6.jpeg                                  

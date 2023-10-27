@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo_guide/widgets/drawer_menu.dart';
 
 class FlexScreenRow extends StatelessWidget {
    
@@ -11,6 +12,7 @@ class FlexScreenRow extends StatelessWidget {
         appBar: AppBar(
           title: Text('Ejemplo de Alineación en Flutter por Columnas'),
         ),
+        drawer: DrawerMenu(),
         body: ListView(            
           children: <Widget>[
             // Ejemplo 1: Row con MainAxisAlignment.spaceBetween

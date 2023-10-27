@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo_guide/widgets/drawer_menu.dart';
 
 class ListBuilderScreen2 extends StatefulWidget {
 
@@ -29,6 +30,7 @@ class _ListBuilderScreen2State extends State<ListBuilderScreen2> {
       appBar: AppBar(
         title: const Text('Custom List'),
       ),      
+      drawer: DrawerMenu(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView.builder(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo_guide/widgets/drawer_menu.dart';
 
 class FlexScreenColumn extends StatelessWidget {
    
@@ -7,9 +8,17 @@ class FlexScreenColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      home: Scaffold(      
         appBar: AppBar(
           title: Text('Ejemplo de Alineación en Flutter por Columnas'),
+        ),
+        drawer: DrawerMenu(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            //Navigator.pop(context);
+            Navigator.pushNamed(context, 'home');
+          },
+          child: const Icon(Icons.door_back_door),
         ),
         body: ListView(            
           children: <Widget>[

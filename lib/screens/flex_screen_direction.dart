@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo_guide/widgets/drawer_menu.dart';
 
 class FlexScreenDirection extends StatelessWidget {
    
@@ -11,6 +12,7 @@ class FlexScreenDirection extends StatelessWidget {
         appBar: AppBar(
           title: Text('Ejemplo de Alineación en Flutter'),
         ),
+        drawer: DrawerMenu(),
         body: FlexRowWidget(),
       ),
     );

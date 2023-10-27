@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo_guide/widgets/drawer_menu.dart';
 
 class CounterPage extends StatefulWidget {
 
@@ -20,6 +21,7 @@ class _CounterPageState extends State<CounterPage> {
         title: const Text('Counter App..'),
         elevation: 10,
       ),      
+      drawer: DrawerMenu(),
       body: Center(
         child: Column(
            mainAxisAlignment: MainAxisAlignment.center,           
