@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: 'listview',
+      initialRoute: 'home',
       routes: {
         'home':(context) => const HomeScreen(),
         'counter':(context) => const CounterPage(),
@@ -26,6 +26,11 @@ class MyApp extends StatelessWidget {
         'listview2':(context) => ListBuilderScreen2(),
         'flexbox': (context) => const FlexScreenColumn(),
         'animated': (context) => const ContainerPage(),
+        'qr_code': (context) => const QrScannerScreen(),
+        'swipper': (context) => const CardSwiperScreen(),
+        'slivers': (context) => const SliversScreen(),
+        'profile': (context) => const ProfileScreen(),
+        'alert': (context) => const AlertScreen(),
       },
     );
   }

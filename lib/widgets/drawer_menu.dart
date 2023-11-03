@@ -11,6 +11,11 @@ class DrawerMenu extends StatelessWidget {
     {'route':'animated','title':'Animated Cointainer','subtitle':''},   
     {'route':'counter','title':'Counter','subtitle':''},   
     {'route':'flexbox','title':'Ejemplos de Flexbox','subtitle':''},   
+    {'route':'qr_code','title':'QR Scanner','subtitle':''},   
+    {'route':'swipper','title':'Card Swipper','subtitle':''},   
+    {'route':'slivers','title':'Slivers','subtitle':''},       
+    {'route':'profile','title':'Perfil Usuario','subtitle':''},       
+    {'route':'alert','title':'Alertas','subtitle':''},       
   ];
 
   DrawerMenu({super.key});
