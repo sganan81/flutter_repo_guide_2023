@@ -6,6 +6,9 @@ class CardSwiperScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(   
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
       floatingActionButton: FloatingActionButton(
@@ -18,7 +21,7 @@ class CardSwiperScreen extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            const CardPoster(),
+            CardPoster(size:size),
             const CardBody(),
             const SizedBox(height: 10,),            
             CardSwiper(),
@@ -36,16 +39,17 @@ class CardBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(      
-      width: double.infinity,
-      height: 140,
+    
+    return Container(   
+      color: Colors.amber,   
+      width: double.infinity,     
       margin: const EdgeInsets.symmetric(vertical: 10),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: 
-        Column(
+        const Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [            
+          children: [            
             Text('Game of Thrones',style: TextStyle(
               fontFamily: 'Roboto',
               fontSize: 28
@@ -54,10 +58,7 @@ class CardBody extends StatelessWidget {
             Text(
               maxLines:5,
               textAlign:TextAlign.justify,
-              'Enim non culpa amet sint cillum dolor culpa irure mollit sit minim sit eiusmod ad. Elit anim adipisicing voluptate exercitation consectetur aliquip exercitation reprehenderit ex elit tempor ipsum ut. Nulla reprehenderit incididunt mollit mollit ea consectetur.',
-              style: TextStyle(                
-                overflow: TextOverflow.ellipsis,                
-              ),
+              'Enim non culpa amet sint cillum dolor culpa irure mollit sit minim sit eiusmod ad. Elit anim adipisicing voluptate exercitation consectetur aliquip exercitation reprehenderit ex elit tempor ipsum ut. Nulla reprehenderit incididunt mollit mollit ea consectetur. Enim non culpa amet sint cillum dolor culpa irure mollit sit minim sit eiusmod ad. Elit anim adipisicing voluptate exercitation consectetur aliquip exercitation reprehenderit ex elit tempor ipsum ut. Nulla reprehenderit incididunt mollit mollit ea consectetur.Enim non culpa amet sint cillum dolor culpa irure mollit sit minim sit eiusmod ad. Elit anim adipisicing voluptate exercitation consectetur aliquip exercitation reprehenderit ex elit tempor ipsum ut. Nulla reprehenderit incididunt mollit mollit ea consectetur. Enim non culpa amet sint cillum dolor culpa irure mollit sit minim sit eiusmod ad. Elit anim adipisicing voluptate exercitation consectetur aliquip exercitation reprehenderit ex elit tempor ipsum ut. Nulla reprehenderit incididunt mollit mollit ea consectetur.',              
             )
           ],
         )
@@ -68,7 +69,7 @@ class CardBody extends StatelessWidget {
 class CardSwiper extends StatelessWidget {
 
   final List _castMovies = <Map<String,String>>[
-    {'image':'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/86jeYFV40KctQMDQIWhJ5oviNGj.jpg','actor':'Emilia Clarke','name':'Daenerys Targaryen','duration':'80 episodios'},
+    {'image':'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/86jeYFV40KctQMDQIWhJ5oviNGj.jpg','actor':'Emilia Clarke','name':'Daenerys Targaryen','duration':'80 episodios.80 episodios.80 episodios.80 episodios.80 episodios.80 episodios.80 episodios.'},
     {'image':'https://www.themoviedb.org/t/p/w138_and_h175_face/htGBMno71BJAEGF3Y9f62MdA3Yt.jpg','actor':'Kit Harington','name':'Jon Snow','duration':'80 episodios'},
     {'image':'https://www.themoviedb.org/t/p/w138_and_h175_face/lRsRgnksAhBRXwAB68MFjmTtLrk.jpg','actor':'Peter Dinklage','name':'Tyrion Lannister','duration':'79 episodios'},
     {'image':'https://www.themoviedb.org/t/p/w138_and_h175_face/n9zXQhjtXQnc30kqF66hdX4i3PG.jpg','actor':'Iain Glen','name':'Jorah Mormont','duration':'79 episodios'},
@@ -85,7 +86,7 @@ class CardSwiper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(      
       width: double.infinity,
       height: 320,       
       child:Column(
@@ -96,7 +97,7 @@ class CardSwiper extends StatelessWidget {
             child: Text('Cards inferior', 
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 18,                
+                fontSize: 18,                                
                 color: Colors.black54
               ),
             ),
@@ -109,10 +110,13 @@ class CardSwiper extends StatelessWidget {
               itemCount: _castMovies.length,
               itemBuilder: (context, index) {
                 return Card(
-                  child: Container(                  
+                  child: Container(                                      
                     width: 150,
                     height: 180,
-                    margin: const EdgeInsets.symmetric(vertical: 10, horizontal:10),                  
+                    margin: const EdgeInsets.symmetric(
+                      vertical: 10, 
+                      horizontal:10
+                    ),                  
                     alignment: Alignment.center,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -134,7 +138,10 @@ class CardSwiper extends StatelessWidget {
                         const SizedBox(height: 5,),
                         Text(_castMovies[index]['name']),
                         const SizedBox(height: 15,),
-                        Text(_castMovies[index]['duration']),
+                        Text(
+                          _castMovies[index]['duration'],
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ],
                     ),
                   ),
@@ -148,21 +155,23 @@ class CardSwiper extends StatelessWidget {
 }
 
 class CardPoster extends StatelessWidget {
+  final Size size;
+
   const CardPoster({
     Key? key,
+    required this.size,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(      
       width: double.infinity,
-      height: 400,      
+      height: size.height * 0.45,            
       child: 
-              FadeInImage(
+              const FadeInImage(
                 placeholder: AssetImage('assets/images/loading.gif'), 
                 image: NetworkImage('https://www.themoviedb.org/t/p/w600_and_h900_bestv2/z9gCSwIObDOD2BEtmUwfasar3xs.jpg'),                  
-                fit: BoxFit.fill,
-              
+                fit: BoxFit.fill,              
               ),
     );
   }
