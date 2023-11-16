@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_repo_guide/helpers/preferences.dart';
+import 'package:flutter_repo_guide/providers/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
    
@@ -46,14 +48,14 @@ class _BodyProfileState extends State<BodyProfile> {
 
   @override
   Widget build(BuildContext context) {    
-
+    final temaProvider = Provider.of<ThemeProvider>(context, listen:false);    
     return Column(
             children: [
               TextFormField(
                 onChanged: (value) {                  
-                  print(value);
+                  Preferences.email = value;
                 },
-                initialValue: 'demo@demo.com.ar',
+                initialValue: Preferences.email,
                 style: const TextStyle(
                   color: Color.fromARGB(255, 197, 97, 97),
                 ),                       
@@ -67,29 +69,30 @@ class _BodyProfileState extends State<BodyProfile> {
               const SizedBox(height: 10,),
               TextFormField(     
                 onChanged: (value) {                  
-                  print(value);
+                  Preferences.nombre = value;
                 },
-                initialValue: '',
+                initialValue: Preferences.nombre,
                 keyboardType: TextInputType.text,
                 decoration: decorationInputs(label: 'Nickname'),
               ),
               const SizedBox(height: 10,),
               TextFormField(     
                 onChanged: (value) {                  
-                  print(value);
+                  Preferences.dni = value;
                 },
-                initialValue: '',
+                initialValue: Preferences.dni,
                 keyboardType: TextInputType.number,
                 decoration: decorationInputs(label: 'DNI'),
               ),
               const SizedBox(height: 15,),   
               SwitchListTile.adaptive(
                 title: const Text('Dark Mode'),
-                value: darkMode, 
-                onChanged: (value) {                  
-                  darkMode = !darkMode;
+                value: Preferences.darkmode, 
+                onChanged: (bool value) {                                    
                   setState(() {
-                    
+                    Preferences.darkmode = value;
+                    (value) ? temaProvider.setDark() : temaProvider.setLight();
+
                   });
                 },
               ),                           
