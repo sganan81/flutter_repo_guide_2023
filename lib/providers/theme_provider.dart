@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo_guide/themes/default_theme.dart';
 
 
 class ThemeProvider extends ChangeNotifier{
@@ -13,13 +14,13 @@ class ThemeProvider extends ChangeNotifier{
 
   setLight(){
       print('setLight');
-      temaActual = ThemeData.light();
+      temaActual = DefaultTheme.defaultTheme;
       notifyListeners();
   }
   
   setDark(){
       print('setLight');
-      temaActual = ThemeData.dark();
+      temaActual = DefaultTheme.darkTheme;
       notifyListeners();
   }
 

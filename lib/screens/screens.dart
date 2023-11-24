@@ -1,4 +1,8 @@
+export 'package:flutter_repo_guide/screens/infinite_scroll_screen.dart';
 
+export 'package:flutter_repo_guide/screens/pageview_screen.dart';
+export 'package:flutter_repo_guide/screens/photo_screen.dart';
+export 'package:flutter_repo_guide/screens/provider_screen.dart';
 export 'package:flutter_repo_guide/screens/alert_screen.dart';
 export 'package:flutter_repo_guide/screens/profile_page.dart';
 export 'package:flutter_repo_guide/screens/qr_page.dart';
@@ -16,6 +20,10 @@ export 'package:flutter_repo_guide/screens/card_sample_page.dart';
 export 'package:flutter_repo_guide/screens/flex_screen_column.dart';
 export 'package:flutter_repo_guide/screens/tmp_listview_builder.dart';
 export 'package:flutter_repo_guide/screens/tmp_listview_builder2.dart';
+
+  
+
+
 
 
  

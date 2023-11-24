@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_repo_guide/helpers/preferences.dart';
 import 'package:flutter_repo_guide/providers/theme_provider.dart';
+import 'package:flutter_repo_guide/screens/pageview_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'screens/screens.dart';
 
 
 void main() async{
   // TODO: Comentar
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load();
   await Preferences.initShared();
 
  
@@ -15,7 +18,7 @@ void main() async{
   runApp(
      MultiProvider(
       providers: [        
-        ChangeNotifierProvider<ThemeProvider>(create: (_) => ThemeProvider(isDarkMode: Preferences.darkmode)),        
+        ChangeNotifierProvider<ThemeProvider>(create: (_) => ThemeProvider(isDarkMode: Preferences.darkmode)),                        
       ],
       child: const MyApp()
     )
@@ -46,6 +49,10 @@ class MyApp extends StatelessWidget {
         'slivers': (context) => const SliversScreen(),
         'profile': (context) => const ProfileScreen(),
         'alert': (context) => const AlertScreen(),
+        'provider': (context) => const DemoProviderScreen(), 
+        'photo_provider': (context) => const PhotosScreen(), 
+        'pageview': (context) => PageViewScreen(), 
+        'infinite_scroll': (context) => const InfiniteScrollScreen(), 
       },
     );
   }

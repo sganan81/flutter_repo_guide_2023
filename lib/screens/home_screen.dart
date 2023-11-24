@@ -9,8 +9,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
-        centerTitle: true,
-      ),
+        centerTitle: true,        
+      ),          
       drawer: DrawerMenu(),
       body: const Center(child: Text('Widget')),
       floatingActionButton: FloatingActionButton(

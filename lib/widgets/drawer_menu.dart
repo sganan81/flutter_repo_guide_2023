@@ -16,6 +16,10 @@ class DrawerMenu extends StatelessWidget {
     {'route':'slivers','title':'Slivers','subtitle':''},       
     {'route':'profile','title':'Perfil Usuario','subtitle':''},       
     {'route':'alert','title':'Alertas','subtitle':''},       
+    {'route':'provider','title':'Demo Provider','subtitle':'bonus: BottomNavigationBar'},       
+    {'route':'photo_provider','title':'Unsplash','subtitle':''},       
+    {'route':'pageview','title':'Pageviews','subtitle':''},       
+    {'route':'infinite_scroll','title':'Infinite Scroll','subtitle':''},       
   ];
 
   DrawerMenu({super.key});
