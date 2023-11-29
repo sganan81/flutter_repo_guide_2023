@@ -11,7 +11,7 @@ class PhotosProvider extends ChangeNotifier{
 
   final String _apiKey = dotenv.env['API_KEY_UNSPLASH'].toString();
   final String _baseUrl = 'api.unsplash.com';
-  //final String _baseUrl = '10.0.2.2:8080';
+  // final String _baseUrl = '10.0.2.2:8080';
   bool isLoading= false;
   int page = 1;
 
@@ -31,9 +31,11 @@ class PhotosProvider extends ChangeNotifier{
         'client_id' :_apiKey, 
         'page':page.toString(),       
       });
-      // final url = Uri.http(_baseUrl, '/api/v1/fotos/lastphotos');
+      /* final url = Uri.http(_baseUrl, '/api/v1/fotos/lastphotos',{
+        'page': page.toString(),
+      }); */
       
-      // print('url: $url');      
+      print('url future: $url');      
       
       final response = await http.get(url); 
 

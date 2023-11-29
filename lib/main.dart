@@ -53,6 +53,10 @@ class MyApp extends StatelessWidget {
         'photo_provider': (context) => const PhotosScreen(), 
         'pageview': (context) => PageViewScreen(), 
         'infinite_scroll': (context) => const InfiniteScrollScreen(), 
+        'future_builder1': (context) => FutureBuilderScreen(), 
+        'future_builder2': (context) => FuturePhotoScreen(), 
+        'form_screen': (context) => const FormScreen(), 
+        'fingerprint_screen': (context) => const FingerPrintScreen(), 
       },
     );
   }

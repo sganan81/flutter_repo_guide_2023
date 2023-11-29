@@ -20,6 +20,10 @@ class DrawerMenu extends StatelessWidget {
     {'route':'photo_provider','title':'Unsplash','subtitle':''},       
     {'route':'pageview','title':'Pageviews','subtitle':''},       
     {'route':'infinite_scroll','title':'Infinite Scroll','subtitle':''},       
+    {'route':'future_builder1','title':'Future Builder Ej1','subtitle':''},       
+    {'route':'future_builder2','title':'Future Builder Ej2','subtitle':''},       
+    {'route':'form_screen','title':'Form Screen','subtitle':''},       
+    {'route':'fingerprint_screen','title':'Huella Digital','subtitle':''},       
   ];
 
   DrawerMenu({super.key});

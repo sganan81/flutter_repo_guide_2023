@@ -7,7 +7,8 @@ class DefaultTheme{
   static final ThemeData defaultTheme = ThemeData.light().copyWith(
         primaryColor: Colors.greenAccent,
         appBarTheme: const AppBarTheme(
-          backgroundColor: primary,          
+          backgroundColor: Colors.red,  
+          foregroundColor: Colors.red        
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: TextButton.styleFrom(
